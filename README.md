@@ -164,8 +164,10 @@ Explanation:
 Used to get the earliest employees, sales, etc.
 2. Outer Query: The outer query selects the orders where the category_order_rank is less than or equal to 2. This retrieves the first two orders based on the order_date within each product_category
 
+![EarliestRecords](https://github.com/user-attachments/assets/3e063e6f-9ad9-464b-bff0-afb8de80cb6c)
 
-![Test runs6](./RowNumberFunction.jpg)
+
+
 5.SELECT
     ORDER_ID,
     PRODUCT_CATEGORY,
