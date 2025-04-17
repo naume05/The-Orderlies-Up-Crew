@@ -56,6 +56,7 @@ INSERT INTO ORDERS_DATA VALUES (105, 1213,DATE '2024-03-25', 'Clothing', 'Dress'
 
 ![OrdersTable](https://github.com/user-attachments/assets/adc67ebc-9ba4-4632-8a28-bd4688342db1)
 
+![OrdersDataTable](https://github.com/user-attachments/assets/04aca950-c5d5-41ac-ba2c-72e373ccfcb0)
 
 1.comparison
  SELECT
@@ -86,7 +87,7 @@ LAG(): This window function retrieves the total_amount from the previous row wit
 Explanation:
 LEAD(): This window function retrieves the total_amount from the next row within the result set, ordered by order_date
 
-![Test runs3](./LeadFunction.jpg)
+
 
 
 2. Ranking
