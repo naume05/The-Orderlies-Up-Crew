@@ -106,7 +106,9 @@ RANK() OVER (PARTITION BY product_category ORDER BY total_amount DESC): This win
 
 DENSE_RANK() OVER (PARTITION BY product_category ORDER BY total_amount DESC): This window function also assigns a rank to each row within each product_category based on the total_amount in descending order. However, unlike RANK(), when there are ties, DENSE_RANK() assigns the same rank, and the next rank is consecutive (no ranks are skipped)
 
-![Test runs4](./DenseRankFunction.jpg)
+![Ranking](https://github.com/user-attachments/assets/823f7c1c-39ec-4772-927d-2608553852ab)
+
+
 
 
 3.Identifying Top Records
