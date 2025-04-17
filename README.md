@@ -10,7 +10,6 @@
 
 **1. Names:  Derrick Niyuhire ID: 25243**
 **2. Names: Naume Murungi   ID: 26334**
-
 ---
 
 ## Objective
