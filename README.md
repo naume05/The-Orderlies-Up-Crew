@@ -108,9 +108,6 @@ DENSE_RANK() OVER (PARTITION BY product_category ORDER BY total_amount DESC): Th
 
 ![Ranking](https://github.com/user-attachments/assets/823f7c1c-39ec-4772-927d-2608553852ab)
 
-
-
-
 3.Identifying Top Records
  SELECT
     ORDER_ID,
@@ -137,7 +134,8 @@ Explanation:
 1.Inner Query: We first use a subquery to calculate the rank of each order within its product_category based on the total_amount in descending order, using the RANK() function. This handles duplicate total_amount values by assigning them the same rank
 2.Outer Query: The outer query then selects the orders where the category_rank is less than or equal to 3. This effectively retrieves the top 3 orders based on total_amount within each product_category.
 
-![Test runs5](./RankFunction.jpg)
+![IdentifyingTopRecords](https://github.com/user-attachments/assets/1bdb830a-0cad-4407-896f-75f468c8979f)
+
 
 
 4.SELECT
