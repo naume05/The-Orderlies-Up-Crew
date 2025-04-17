@@ -166,8 +166,6 @@ Used to get the earliest employees, sales, etc.
 
 ![EarliestRecords](https://github.com/user-attachments/assets/3e063e6f-9ad9-464b-bff0-afb8de80cb6c)
 
-
-
 5.SELECT
     ORDER_ID,
     PRODUCT_CATEGORY,
@@ -192,7 +190,8 @@ MAX(total_amount): The aggregate function.
 
 OVER (): An empty OVER() clause indicates that the aggregation should be performed over the entire result set
 
-![Test runs7](./AggregateFunction.jpg)
+<img width="958" alt="AggregationFunction" src="https://github.com/user-attachments/assets/2fc5720b-56f4-40c1-a8ed-7ff540838a6b" />
+
 
 ## Findings
 Based on the data, there's a strong indication that the "Laptop" consistently represents a high-value transaction for the business, evidenced by its appearance as the highest single order. Furthermore, the early adoption of "Laptop" and "Science Fiction Novel" suggests initial customer interest in the Electronics and Books categories, respectively.
