@@ -87,8 +87,7 @@ LAG(): This window function retrieves the total_amount from the previous row wit
 Explanation:
 LEAD(): This window function retrieves the total_amount from the next row within the result set, ordered by order_date
 
-
-
+![Comparison](https://github.com/user-attachments/assets/aa09d02c-a9a2-4a01-a89e-53aef6b9b9a7)
 
 2. Ranking
 SELECT
