@@ -53,7 +53,8 @@ INSERT INTO ORDERS_DATA VALUES (105,986, DATE '2024-01-10', 'Electronics', 'Lapt
 INSERT INTO ORDERS_DATA VALUES (105,409, DATE '2024-02-20', 'Books', 'Cookbook', 1, 20, 20);
 INSERT INTO ORDERS_DATA VALUES (105, 1213,DATE '2024-03-25', 'Clothing', 'Dress', 1, 80, 80);
 
-![Test runs1](./CreateTable.jpg)
+
+![OrdersTable](https://github.com/user-attachments/assets/adc67ebc-9ba4-4632-8a28-bd4688342db1)
 
 
 1.comparison
