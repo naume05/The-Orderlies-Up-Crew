@@ -82,10 +82,7 @@ ORDER BY
     ORDER_DATE;
 
 Explanation: 
-LAG(): This window function retrieves the total_amount from the previous row within the result set, ordered by order_date..
-
-![Test runs2](./LagFunction.jpg)
-
+LAG(): This window function retrieves the total_amount from the previous row within the result set, ordered by order_date.
 Explanation:
 LEAD(): This window function retrieves the total_amount from the next row within the result set, ordered by order_date
 
