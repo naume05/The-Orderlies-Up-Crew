@@ -37,6 +37,9 @@ CREATE TABLE ORDERS_DATA (
     TOTAL_AMOUNT NUMBER
 );
 ```
+![OrdersDataTable](https://github.com/user-attachments/assets/93218210-e84c-4a55-a488-ccab5bbaf5d2)
+
+
 ![OrdersTable](https://github.com/user-attachments/assets/55bc1c17-cd6c-4c15-882e-93f721f4b6e7)
 
 
