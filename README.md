@@ -36,7 +36,11 @@ CREATE TABLE ORDERS_DATA (
     UNITY_PRICE NUMBER,
     TOTAL_AMOUNT NUMBER
 );
+```
+![OrdersTable](https://github.com/user-attachments/assets/55bc1c17-cd6c-4c15-882e-93f721f4b6e7)
 
+
+```SQL
 INSERT INTO ORDERS_DATA VALUES (101,2002, DATE '2024-01-15', 'Electronics', 'Laptop', 1, 1200, 1200);
 INSERT INTO ORDERS_DATA VALUES (101,3010, DATE '2024-01-20', 'Books', 'Science Fiction Novel', 2, 15, 30);
 INSERT INTO ORDERS_DATA VALUES (102,1212, DATE '2024-02-01', 'Electronics', 'Smartphone', 1, 900, 900);
@@ -52,12 +56,10 @@ INSERT INTO ORDERS_DATA VALUES (104,7654, DATE '2024-04-05', 'Electronics', 'Sma
 INSERT INTO ORDERS_DATA VALUES (105,986, DATE '2024-01-10', 'Electronics', 'Laptop', 1, 1200, 1200); -- Duplicate total_amount
 INSERT INTO ORDERS_DATA VALUES (105,409, DATE '2024-02-20', 'Books', 'Cookbook', 1, 20, 20);
 INSERT INTO ORDERS_DATA VALUES (105, 1213,DATE '2024-03-25', 'Clothing', 'Dress', 1, 80, 80);
+```
 
 
-![OrdersTable](https://github.com/user-attachments/assets/adc67ebc-9ba4-4632-8a28-bd4688342db1)
-
-![OrdersDataTable](https://github.com/user-attachments/assets/04aca950-c5d5-41ac-ba2c-72e373ccfcb0)
-
+```SQL
 1.comparison
  SELECT
     ORDER_ID,
