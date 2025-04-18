@@ -9,11 +9,13 @@
 **Our Project Information**
 
 **1. Names:  Derrick Niyuhire ID: 25243**
+
 **2. Names: Naume Murungi   ID: 26334**
 ---
 
 ## Objective
-This project demonstrates the use of **SQL Window Functions** on a generic orders dataset using Oracle PL/SQL. The functions used include:
+This project demonstrates the use of **SQL Window Functions** on a generic orders dataset using Oracle PL/SQL. 
+The functions used include:
 
 - `LAG()`, `LEAD()` – for comparing current rows with previous/next.
 - `RANK()`, `DENSE_RANK()`, `ROW_NUMBER()` – for ordering and ranking within groups.
@@ -60,6 +62,7 @@ INSERT INTO ORDERS_DATA VALUES (105,986, DATE '2024-01-10', 'Electronics', 'Lapt
 INSERT INTO ORDERS_DATA VALUES (105,409, DATE '2024-02-20', 'Books', 'Cookbook', 1, 20, 20);
 INSERT INTO ORDERS_DATA VALUES (105, 1213,DATE '2024-03-25', 'Clothing', 'Dress', 1, 80, 80);
 ```
+![DataInsertation](https://github.com/user-attachments/assets/6ca03371-fd9e-4131-99b8-a5707925aa16)
 
 
 ```SQL
@@ -86,15 +89,18 @@ FROM
     ORDERS_DATA
 ORDER BY
     ORDER_DATE;
+```
+![Comparison](https://github.com/user-attachments/assets/f85fb2f6-0afe-4357-add9-7bd4c7ecd5ba)
 
 Explanation: 
 LAG(): This window function retrieves the total_amount from the previous row within the result set, ordered by order_date.
+
 Explanation:
 LEAD(): This window function retrieves the total_amount from the next row within the result set, ordered by order_date
 
-![Comparison](https://github.com/user-attachments/assets/aa09d02c-a9a2-4a01-a89e-53aef6b9b9a7)
-
-2. Ranking
+```SQL
+2.
+RANKING FUNCTION
 SELECT
     ORDER_ID,
     PRODUCT_CATEGORY,
@@ -105,15 +111,19 @@ FROM
     ORDERS_DATA
 ORDER BY
     PRODUCT_CATEGORY, category_rank;
+```
+![Ranking](https://github.com/user-attachments/assets/c28bdfee-4886-45f9-8f39-3a1f8c1c6250)
 
 Explanation:
 RANK() OVER (PARTITION BY product_category ORDER BY total_amount DESC): This window function assigns a rank to each row within each product_category based on the total_amount in descending order (highest amount gets rank 1). If there are ties (same total_amount), they receive the same rank, and the next rank is skipped
 
+
 DENSE_RANK() OVER (PARTITION BY product_category ORDER BY total_amount DESC): This window function also assigns a rank to each row within each product_category based on the total_amount in descending order. However, unlike RANK(), when there are ties, DENSE_RANK() assigns the same rank, and the next rank is consecutive (no ranks are skipped)
 
-![Ranking](https://github.com/user-attachments/assets/823f7c1c-39ec-4772-927d-2608553852ab)
 
-3.Identifying Top Records
+```SQL
+3.
+IDENTIFYING TOP RECORDS.
  SELECT
     ORDER_ID,
     PRODUCT_CATEGORY,
@@ -134,16 +144,19 @@ WHERE
     category_rank <= 3
 ORDER BY
     PRODUCT_CATEGORY, category_rank;
+```
+![IdentifyingTopRecords](https://github.com/user-attachments/assets/0b39f550-e150-4728-9fd6-a8d3426970f9)
 
 Explanation:
-1.Inner Query: We first use a subquery to calculate the rank of each order within its product_category based on the total_amount in descending order, using the RANK() function. This handles duplicate total_amount values by assigning them the same rank
+1.Inner Query: We first use a subquery to calculate the rank of each order within its product_category based on the total_amount in descending order, using the RANK() function. This handles duplicate total_amount values by assigning them the same rank.
+
 2.Outer Query: The outer query then selects the orders where the category_rank is less than or equal to 3. This effectively retrieves the top 3 orders based on total_amount within each product_category.
 
-![IdentifyingTopRecords](https://github.com/user-attachments/assets/1bdb830a-0cad-4407-896f-75f468c8979f)
 
 
-
-4.SELECT
+```SQL
+4.
+SELECT
     ORDER_ID,
     PRODUCT_CATEGORY,
     ORDER_DATE,
@@ -163,15 +176,19 @@ WHERE
     category_order_rank <= 2
 ORDER BY
     PRODUCT_CATEGORY, category_order_rank;
+```
+
+![EarliestRecords](https://github.com/user-attachments/assets/0db57d1e-e269-4a66-95b8-2d024569d0c9)
 
 Explanation:
 1. Inner Query: We use a subquery to calculate the rank of each order within its product_category based on the order_date in ascending order (earliest date gets rank 1). We use RANK() here as well to handle potential ties in the earliest order dates
 Used to get the earliest employees, sales, etc.
+
 2. Outer Query: The outer query selects the orders where the category_order_rank is less than or equal to 2. This retrieves the first two orders based on the order_date within each product_category
 
-![EarliestRecords](https://github.com/user-attachments/assets/3e063e6f-9ad9-464b-bff0-afb8de80cb6c)
-
-5.SELECT
+```SQL
+5. AGGREGATE FUNCTION
+SELECT
     ORDER_ID,
     PRODUCT_CATEGORY,
     TOTAL_AMOUNT,
@@ -181,6 +198,8 @@ FROM
     ORDERS_DATA
 ORDER BY
     ORDER_ID;
+```
+<img width="958" alt="AggregationFunction" src="https://github.com/user-attachments/assets/56d270ea-3b6b-4d09-848f-59a877a9b888" />
 
 Explanation
 MAX(total_amount) OVER (PARTITION BY product_category): This window function calculates the maximum total_amount within each product_category.
@@ -193,10 +212,7 @@ MAX(total_amount) OVER (): This window function calculates the overall maximum t
 
 MAX(total_amount): The aggregate function.
 
-OVER (): An empty OVER() clause indicates that the aggregation should be performed over the entire result set
-
-<img width="958" alt="AggregationFunction" src="https://github.com/user-attachments/assets/2fc5720b-56f4-40c1-a8ed-7ff540838a6b" />
-
+OVER (): An empty OVER() clause indicates that the aggregation should be performed over the entire result set.
 
 ## Findings
 Based on the data, there's a strong indication that the "Laptop" consistently represents a high-value transaction for the business, evidenced by its appearance as the highest single order. Furthermore, the early adoption of "Laptop" and "Science Fiction Novel" suggests initial customer interest in the Electronics and Books categories, respectively.
@@ -204,7 +220,6 @@ Based on the data, there's a strong indication that the "Laptop" consistently re
 ## Conclusion
 The application of window functions effectively illuminated key aspects of the order data, including peak transactions and the commencement of product sales within categories. This detailed analysis provides valuable intelligence for strategic business decisions and a deeper understanding of sales performance.
 ________________________________________
-
 
 
 
