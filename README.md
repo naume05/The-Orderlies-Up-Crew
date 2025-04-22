@@ -94,9 +94,14 @@ ORDER BY
 
 Explanation: 
 LAG(): This window function retrieves the total_amount from the previous row within the result set, ordered by order_date.
-
++ Common use cases: - comparing values between consecutive rows
+                    - calculating differences or changes over time
+                    - detecting changes in status or trends  
 Explanation:
 LEAD(): This window function retrieves the total_amount from the next row within the result set, ordered by order_date
++ Common use cases: - Calculating trends
+                    - Comparing current and next row values
+                    - Finding gaps or changes in data sequences
 
 ```SQL
 2.
